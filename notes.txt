@@ -1,0 +1,27 @@
+
+TODO:
+
+breakdown:
+
+list users - done
+edit users - done
+delete users - done
+list images - done
+edit images - done
+delete image - done
+view image - done
+list audit - done
+view about - done
+edit about - done
+list endorse - done
+edit endorse - done
+delete endorse - done
+login screen - done
+handle login - done
+logout handle - done
+index template - done
+audit logging - done
+image resize - done
+contact submit email - x
+galleries - x
+

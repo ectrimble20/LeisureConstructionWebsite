@@ -1,0 +1,127 @@
+Leisure Construction - Light Weight Content Management System (LWCMS)
+
+Version:  Release Candidate 3 (RC3) 1.1.0
+
+1. User
+
+The user management section give you access to create, update password, active/deactivate and delete users.  All users
+are consider "admin" and will have full access to the CMS system.
+
+When you first enter the user section you will be display a list of user accounts.  The columns are fairly self
+explanatory but for easy of use we'll break down what each option does.
+
+The 'Username' field is the users login name.  No personal or meta account information is used in this system, so a
+username can be anything from a alias to a first.last combination or anything in between.
+
+The 'Active' field indicates whether or not the account is currently active.  This is indicated by a check in the box.
+An inactive account will show up as an X.  To activate or deactivate an account, simply click on the button.
+
+The 'Password' field is used solely to reset or change a password.  Passwords are stored on the database in a 1-way
+encrypted format and thus cannot be retrieved.  In the event a user forgets their password, another use can access
+the user management page and reset it for them.  To do this, simply type in the new password and hit the 'wrench' button
+next to the input field.
+
+The 'Delete' field is used to completely remove a users account.  This will not remove their presence from the system,
+it will simply remove them from the page and prevent further access for that account.  Any other content updated by that
+user will not be affected by this.
+
+To create a new user, select the "New" button to the upper left and a pop up will appear with fields for username and
+password.  Fill these in and select create a new a user will be created.
+
+2. Audit
+
+The audit screen has no function other than giving an inside view into whats been going on with the site from an admin
+stand point.  Events such as a high number of failed login attempts, content creation/change, and login successes are
+all tracked here.
+
+The screen has three columns, Date, action and alert level.  Date is the server time that was logged when the event was
+tracked.  Action is a blurb about what has occurred, this will generally log the user who performed the action and what
+action was performed.  The alert level column indicates the severity of the event.  For the most part, events will be
+notices and info level events, only in server failure cases will a critical event be logged.  The 'Alert' level is used
+to indicate issues such as excessive failed login attempts.
+
+You can search for key words using the search field above, to narrow it down, you can use multiple words separated by
+a space.  For instance, searching for "Error" might yield all errors logged in the system, where as searching for a
+more specific item such as "error image" would yield errors related to image actions such as failed uploads if they're
+caught by the system.
+
+You also have the option to filter using the 'Filter' button in the upper left.  This allows audit logs to be filtered
+by date range and by alert levels.
+
+3. Image
+
+The image section is where the bulk of the heavy lifting occurs in the management system.  This screen is responsible
+for adding new images, assigning them to galleries, labeling, edited and so for.
+
+Images are not identified by name within the system, they're assigned a GUID (Global Unique Identification Number) which
+allows the system to quickly locate the images.  This also allows the image to be easily assigned and reassigned to a
+different gallery should the need arise.
+
+The 'Title' column indicates the images title.  While some displays do not use the title, this can be used to label an
+image.
+
+The 'Caption' column indicates the blurb about the image.  The gallery display uses this to build the over-lay text
+along with the Title when displayed in a gallery.
+
+The 'Create Date' column indicates the date that the image was uploaded to the system.
+
+The 'Gallery' column indicates what gallery this image belongs to.
+
+Like the User section, there are 3 actions that can be performed.  An image can be activated/deactivated in the same
+manner as a user.  Images can also be deleted from the system.
+
+Unlike the User section, the 'Edit' option for images is a little more involved.
+
+When you select the 'Edit' button, you'll be taking to the edit Meta screen.  This allows for the Title and Caption to
+be updated.  It also allows for assignment to a different gallery.
+
+You may also view the image and it's related thumbnail using the "View" button to the upper left.
+
+The search options for images is a little more limited, you can only narrow the images down by gallery.
+
+Like the User section, you add a new image, select the "New" button, this will allow you to select an image for upload,
+give it a title and caption as well as assign it to a gallery.  Bear in mind that new images come in deactivated in case
+they need to be adjusted.  So if you're happy with the image, you can select 'Activate' on the new image and it will be
+picked up the next time the gallery is loaded.
+
+A special feature of the 'Edit' image section is the re-size option.  This allows you to re-size an image that is
+already uploaded to the server.  To do this, select 'Resize'.  This will take you to a screen with image information
+such as the image's server side ID and the images size.  You may alter the images size here.  To preview the change,
+select the 'preview' button.  This will re-size the image and show you the result.  If you are unhappy with the result
+or the image becomes skewed due to excessive resizing, you may hit the back button, then select the 'Resize' button
+again as no changes are made to the original image until the 'Save' option is selected.  The 'Save' option will not
+appear until after the image has been previewed at least once.
+
+Two things are to note about this feature.  In the even that the image is saved and the image does not appear different,
+it is more than likely because the image has been cached by the web browser.  I would suggest you back out of the edit
+screen and refresh the view, then view the image again if this happen.  That will usually correct the cache.
+
+The other thing to keep in mind is that images scale down much easier than they scale up.  Taking an image from 1200px
+down to 600px will retain much more of the images integrity than going from 600px to 1200px.  This is due to image
+artifacts caused by the software attempting to guess what goes in the empty space created by enlarging an image.  If
+high quality images cannot be obtained through the re-size tool, it is recommended to use a PhotoShop like image tool
+to re-size and re-upload an image.  This is unfortunately a limit of the software the server has at it's disposal.
+
+4. About
+
+Unlike other sections the about sections display and edit is built into a single screen.  This is because it always
+displays the current about section.
+
+The about section has 3 parts to it.  The header, which is a larger title displayed above the entire section, the lead
+in, which is a run in sentence to the main body, and then the body, which is the bulk of the page.
+
+This section allows for HTML tags to be used to style the page.  Any valid HTML is accepted, but keep in mind that this
+can break or effect the layout if it is not compatible with the layout.
+
+At the top of the screen is a small question mark button, this will display a small blurb with tips.
+
+5. Endorsers
+
+Similar to both the Edit image and About controllers, the endorser options allow you to Add, Edit and Delete
+endorsements which appear in the 'What Our Customers Say' section of the primary website display.
+
+You may hide these without deleting them by selecting the 'Activate/Deactivate' option in the same manner as user
+and image entries.
+
+You may also select the edit option which will give you the ability to edit both the endorser as well as the message
+body.
